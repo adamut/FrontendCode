@@ -1,0 +1,15 @@
+<div>
+    <select ng-model="myColor" ng-options="color.text for color in colors track by color.text">
+    </select>
+    <select ng-model="myColor" ng-options="color.text group by color.type for color in colors" ng-change="changeColor()">
+    </select>
+
+    <span ng-class="col.class">Some text</span><br>
+    Input1: <input type="text" ng-model="mod1" name="fname"><br>
+    Input2: <input type="text" ng-model="mod2" name="lname"><br>
+    <table >
+        <tr ng-repeat >
+            {{color.text}}
+        </tr>
+    </table>
+</div>
