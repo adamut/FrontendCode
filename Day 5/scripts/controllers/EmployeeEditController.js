@@ -1,5 +1,5 @@
-hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '$location', 'commonResourcesFactoryBackup',
-    function ($scope, $http, $routeParams, $location, commonResourcesFactoryBackup) {
+hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '$location', 'commonResourcesFactory',
+    function ($scope, $http, $routeParams, $location, commonResourcesFactory) {
         $scope.requiredErrorMessage = "Please fill out this form!";
         $scope.patternDateNotRespectedMessage = "The date format should be yyyy-mm-dd";
         $scope.patternCommisionNotRespectedMessage = "Commission should be in the format 0.XX";
@@ -18,7 +18,7 @@ hrApp.controller('EmployeeEditController', ['$scope', '$http', '$routeParams', '
          * @param addEmployee - employee to be persisted
          */
         $scope.create = function (addEmployee) {
-            $http({url: commonResourcesFactoryBackup.editEmployeeUrl, method: 'PUT', data: addEmployee})
+            $http({url: commonResourcesFactory.editEmployeeUrl, method: 'PUT', data: addEmployee})
                 .success(function (data) {
                     $scope.employee = data;
                     $location.url('/employeeView/' + $scope.employee.employeeId);
