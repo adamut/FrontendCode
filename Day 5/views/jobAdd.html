@@ -1,15 +1,15 @@
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h2 class="panel-title">Add employee</h2>
+        <h2 class="panel-title">Add job</h2>
     </div>
     <div class="panel-body">
-        <ng-form name="employeeAddForm">
+        <ng-form name="jobAddForm">
             <div class="row">
                 <div class="col-lg-6">
                     <!--TODO#HR3-->
-                    <div class="form-group" ng-class="{ 'has-error': employeeAddForm.firstName.$invalid }">
+                    <div class="form-group" ng-class="{ 'has-error': jobAddForm.firstName.$invalid }">
                         <!--TODO#HR2-->
-                        <label for="firstName">First Name :</label>
+                        <label for="firstName">Job Title :</label>
                         <input type="text" id="firstName" name="firstName" class="form-control"
                                ng-model="employee.firstName" required/>
                     </div>

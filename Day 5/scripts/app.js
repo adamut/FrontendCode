@@ -27,9 +27,27 @@ hrApp.config(['$routeProvider',
             .otherwise({
                 templateUrl: 'views/main.html',
                 controller: 'MainController'
-            });
+            })
+            .when('/employeeAdd', {
+                templateUrl: 'views/employeeAdd.html',
+                controller: 'EmployeeAddController'
+            })
+            .when('/employeeEdit/:employeeId', {
+                templateUrl: 'views/employeeEdit.html',
+                controller: 'EmployeeEditController'
+            })
+
+            .when('/jobsAdd', {
+                templateUrl: 'views/jobsAdd.html',
+                controller: 'JobsAddController'
+            })
+
+            .when('/jobList', {
+                templateUrl: 'views/jobList.html',
+                controller: 'JobListController'
+            })
     }]).run(['$rootScope',
-        function ($rootScope) {
-            // TODO
-        }
-    ]);
+    function ($rootScope) {
+        // TODO
+    }
+]);
